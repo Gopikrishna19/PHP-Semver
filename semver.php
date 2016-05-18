@@ -35,12 +35,12 @@ foreach ($version as $i => &$v) {
 
 $version = join('.', $version);
 
-echo "Bumped to version: $version\n";
+echo "\033[0;45mBumped to version: $version\033[0m\n";
 
 file_put_contents($filename, "version=$version");
 
 if (is_dir('.git')) {
-    echo "\nCommitting changes and tagging it.";
+    echo "\nCommitting changes and tagging it...";
     $tag = "\"v$version\"";
     exec("git add .");
     exec("git commit -m $tag");
