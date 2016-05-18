@@ -38,3 +38,10 @@ $version = join('.', $version);
 echo "Bumped to version: $version\n";
 
 file_put_contents($filename, "version=$version");
+
+if (is_dir('.git')) {
+    $tag = "\"v$version\"";
+    exec("git add .");
+    exec("git commit -m $tag");
+    exec("git tag $tag");
+}
