@@ -35,7 +35,7 @@ foreach ($version as $i => &$v) {
 
 $version = join('.', $version);
 
-echo "\033[0;45mBumped to version: $version\033[0m\n";
+echo "\033[0;35mBumped to version: $version\033[0m\n";
 
 file_put_contents($filename, "version=$version");
 
