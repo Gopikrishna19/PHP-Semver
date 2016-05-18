@@ -46,6 +46,7 @@ if (is_dir('.git')) {
     exec("git commit -m $tag");
     exec("git tag $tag");
     echo "\033[0;32mDone. \033[0m\n\n" .
-        "Do 'git push <remote> <branch>' to push the changes and.\n" .
-        "Do 'git push --tags' to push the tags to remote.\n";
+        "Do\n" .
+        "\t1.\t'git push <remote> <branch>' to push the changes and\n" .
+        "\t2.\t'git push --tags' to push the tags to remote.\n";
 }
