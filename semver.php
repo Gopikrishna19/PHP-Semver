@@ -45,5 +45,6 @@ if (is_dir('.git')) {
     exec("git add .");
     exec("git commit -m $tag");
     exec("git tag $tag");
-    echo "\n\033[0;32mDone. \033[0;36mDo 'git push --tags' to push the tags to remote.\033[0m\n";
+    echo "\n\033[0;32mDone. " .
+        "\n\033[0;36mDo 'git push --tags' to push the tags to remote.\033[0m\n";
 }
