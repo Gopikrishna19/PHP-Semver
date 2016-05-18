@@ -40,11 +40,12 @@ echo "\033[0;35mBumped to version: $version\033[0m\n";
 file_put_contents($filename, "version=$version");
 
 if (is_dir('.git')) {
-    echo "\n\033[0;36mCommitting changes and tagging it...";
+    echo "\n\033[0;36mCommitting changes and tagging it...\n";
     $tag = "\"v$version\"";
     exec("git add .");
     exec("git commit -m $tag");
     exec("git tag $tag");
-    echo "\n\033[0;32mDone. \033[0m\n" .
-        "\nDo 'git push --tags' to push the tags to remote.";
+    echo "\033[0;32mDone. \033[0m\n\n" .
+        "Do 'git push <remote> <branch>' to push the changes and.\n" .
+        "Do 'git push --tags' to push the tags to remote.\n";
 }
