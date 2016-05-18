@@ -8,7 +8,7 @@ Download the `semver.php` file to your project or in any location and navigate t
 $ php /path/to/semver.php <major|minor|patch>
 ```
 
-This will create `version.ini` file in your project directory. If the file already exists, it bumps the version to next version.
+This will create `version.ini` file in your project directory. If the file already exists, it bumps the version to next version. If your project is git initiated, this also creates a tag with the new version.
 
 #### Format for `version.ini`
 
