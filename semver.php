@@ -40,8 +40,10 @@ echo "Bumped to version: $version\n";
 file_put_contents($filename, "version=$version");
 
 if (is_dir('.git')) {
+    echo "\nCommitting version and tagging it.";
     $tag = "\"v$version\"";
     exec("git add .");
     exec("git commit -m $tag");
     exec("git tag $tag");
+    echo "\nDone. Do 'git push --tags' to push the tags to remote.";
 }
